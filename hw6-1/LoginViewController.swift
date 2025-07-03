@@ -27,11 +27,11 @@ class LoginViewController: UIViewController {
     
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard userNameTextField == user, passwordTextField == password else {
+        guard userNameTextField.text == user, passwordTextField.text == password else {
             showAlert(
                 title:"Invalid login or password",
                 message: "Plese, enter correct login and password") {
-                    self.passwordTextField = ""
+                    self.passwordTextField.text = ""
                 }
             return false
         }
